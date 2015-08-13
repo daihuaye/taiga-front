@@ -1,0 +1,108 @@
+.attachment-list {
+    .single-attachment {
+        align-items: center;
+        border-bottom: 1px solid $whitish;
+        display: flex;
+        padding: .5rem 0 .5rem .5rem;
+        position: relative;
+        &:hover {
+            .settings {
+                opacity: 1;
+                transition: opacity .2s ease-in;
+            }
+        }
+        &.deprecated {
+            color: $gray-light;
+            .attachment-name a {
+                color: $gray-light;
+            }
+        }
+    }
+    .attachment-name {
+        @include ellipsis(90%);
+        flex: 1;
+        flex-basis: 20%;
+        padding-right: 1rem;
+    }
+    .attachment-comments,
+    .editable-attachment-comment {
+        flex-basis: 40%;
+        flex-grow: 0;
+        margin-right: .5rem;
+        span {
+            color: $gray;
+        }
+    }
+    .attachment-size {
+        flex-basis: 12%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .attachment-settings {
+        flex-basis: 10%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        .settings,
+        .editable-settings {
+            @extend %large;
+            color: $gray-light;
+            display: block;
+            position: absolute;
+            &:hover {
+                color: $primary;
+            }
+        }
+        .settings {
+            opacity: 0;
+            top: .5rem;
+        }
+        .editable-settings {
+            opacity: 1;
+            top: 1rem;
+        }
+        .icon-edit,
+        .icon-floppy {
+            right: 3.5rem;
+        }
+        .icon-delete {
+            right: 2rem;
+            &:hover {
+                color: $red;
+            }
+        }
+        .icon-drag-v {
+            cursor: move;
+            right: 0;
+        }
+    }
+    .icon-delete {
+        @extend %large;
+        color: $gray-light;
+        &:hover {
+            color: $red;
+        }
+    }
+    .editable-attachment-deprecated {
+        display: flex;
+        padding-left: 1rem;
+        span {
+            color: $gray-light;
+        }
+        input {
+            margin-right: .2rem;
+            vertical-align: middle;
+            &:checked+span {
+                color: $grayer;
+            }
+        }
+    }
+    .percentage {
+        background: rgba($primary, .1);
+        bottom: 0;
+        height: 40px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 45%;
+    }
+}

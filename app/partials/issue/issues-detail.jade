@@ -70,7 +70,12 @@ div.wrapper(
             required-edition-perm="modify_issue"
         )
 
-        tg-attachments(ng-model="issue", type="issue")
+        tg-attachments-full(
+            obj-id="issue.id"
+            type="issue",
+            project-id="projectId"
+        )
+
         tg-history(ng-model="issue", type="issue")
 
     sidebar.menu-secondary.sidebar.ticket-data

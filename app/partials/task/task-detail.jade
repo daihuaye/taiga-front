@@ -85,7 +85,12 @@ div.wrapper(
             required-edition-perm="modify_task"
         )
 
-        tg-attachments(ng-model="task", type="task")
+        tg-attachments-full(
+            obj-id="task.id"
+            type="task",
+            project-id="projectId"
+        )
+
         tg-history(ng-model="task", type="task")
 
     sidebar.menu-secondary.sidebar.ticket-data

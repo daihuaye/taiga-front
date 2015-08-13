@@ -243,6 +243,18 @@ helper.attachmentTesting = async function() {
     newAttachmentsLength = await attachmentHelper.countAttachments();
     expect(newAttachmentsLength).to.be.equal(attachmentsLength + deprecatedAttachmentsLength);
 
+    // Gallery
+    attachmentHelper.gallery();
+
+    let countImages = await attachmentHelper.galleryImages().count();
+
+    commonUtil.takeScreenshot('attachments', 'gallery');
+
+    expect(countImages).to.be.above(0);
+
+    attachmentHelper.list();
+
+
     // Deleting
     attachmentsLength = await attachmentHelper.countAttachments();
     await attachmentHelper.deleteLastAttachment();

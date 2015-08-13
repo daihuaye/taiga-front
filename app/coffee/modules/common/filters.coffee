@@ -65,3 +65,9 @@ momentFromNow = ->
         return ""
 
 module.filter("momentFromNow", momentFromNow)
+
+
+sizeFormat = =>
+    return @.taiga.sizeFormat
+
+module.filter("sizeFormat", sizeFormat)

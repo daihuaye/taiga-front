@@ -1,5 +1,12 @@
 # Changelog #
 
+## 1.10.0 ??? (unreleased)
+
+### Features
+- Statics folder hash.
+- Attachments image gallery.
+- Upload attachments on US/issue/task lightbox.
+- Drag files from desktop.
 
 ## 1.10.0 ??? (unreleased)
 - [118n] Now taiga plugins can be translatable.
